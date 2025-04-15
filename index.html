@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage - Yousef</title>
+    <link rel="stylesheet" href="/ styles.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Notice we kept the same ID for the h1 -->
+      <h1 id="intro">Welcome to Yousef's Website</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>About Me</h2>
+        <p>
+          I am a Computer Science student at KSU University. I love coding,
+          solving problems, and building cool projects!
+        </p>
+      </section>
+
+      <section>
+        <h2>My Hobbies</h2>
+        <ul>
+          <li>Reading books</li>
+          <li>Playing video games</li>
+          <li>Traveling</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>My Interests</h2>
+        <ol>
+          <li>Web Development</li>
+          <li>Data Structures and Algorithms</li>
+          <li>Artificial Intelligence</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Yousef. All rights reserved.</p>
+      <a href="#top">Back to Top</a>
+    </footer>
+
+    <!-- JavaScript for dynamic greeting -->
+    <script>
+      // Get the current hour on the user's device
+      const currentHour = new Date().getHours();
+      let greetingMessage;
+
+      if (currentHour < 12) {
+        greetingMessage = "Good morning!";
+      } else if (currentHour < 18) {
+        greetingMessage = "Good afternoon!";
+      } else {
+        greetingMessage = "Good evening!";
+      }
+
+      // Select the <h1> element
+      const introHeading = document.getElementById("intro");
+
+      // Update the heading text to include the time-based greeting
+      introHeading.textContent =
+        greetingMessage + " Welcome to Yousef's Website";
+    </script>
+  </body>
+</html>

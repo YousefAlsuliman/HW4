@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Yousef</title>
+    <link rel="stylesheet" href="/ styles.css" />
+    <style>
+      /* Example styling for error messages */
+      .error {
+        color: red;
+        font-size: 0.9em;
+        margin-left: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Contact Me</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Use onsubmit to call our validation function -->
+      <form
+        action="mailto:yousefalsuliman9@gmail.com"
+        method="post"
+        enctype="text/plain"
+        onsubmit="return validateForm()"
+      >
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" /><br />
+        <!-- Error message placeholder for name -->
+        <span id="nameError" class="error"></span>
+        <br /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" /><br />
+        <!-- Error message placeholder for email -->
+        <span id="emailError" class="error"></span>
+        <br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" cols="40"></textarea>
+        <br />
+        <!-- Error message placeholder for message -->
+        <span id="messageError" class="error"></span>
+        <br /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+
+      <p>
+        You can also email me directly at
+        <a href="mailto:yousefalsuliman9@gmail.com"
+          >yousefalsuliman9@gmail.com</a
+        >.
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Yousef. All rights reserved.</p>
+      <a href="#top">Back to Top</a>
+    </footer>
+
+    <!-- JavaScript for form validation -->
+    <script>
+      function validateForm() {
+        // Clear previous error messages
+        document.getElementById("nameError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("messageError").textContent = "";
+
+        let isValid = true;
+
+        const nameField = document.getElementById("name");
+        const emailField = document.getElementById("email");
+        const messageField = document.getElementById("message");
+
+        // Check if name is empty
+        if (nameField.value.trim() === "") {
+          document.getElementById("nameError").textContent =
+            "Please enter your name.";
+          isValid = false;
+        }
+
+        // Check if email is empty or invalid
+        const emailValue = emailField.value.trim();
+        // Simple regex for validating email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailValue === "") {
+          document.getElementById("emailError").textContent =
+            "Please enter your email.";
+          isValid = false;
+        } else if (!emailRegex.test(emailValue)) {
+          document.getElementById("emailError").textContent =
+            "Please enter a valid email address.";
+          isValid = false;
+        }
+
+        // Check if message is fewer than 10 characters
+        if (messageField.value.trim().length < 10) {
+          document.getElementById("messageError").textContent =
+            "Message must be at least 10 characters long.";
+          isValid = false;
+        }
+
+        // If isValid is still true, form will submit
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

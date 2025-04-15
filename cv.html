@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV, Yousef</title>
+    <link rel="stylesheet" href="/ styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Curriculum Vitae</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <section>
+          <h2>Education</h2>
+          <p>
+            <strong>KSU University</strong> - Bachelor of Science in Computer
+            Science (2021-2025)
+          </p>
+          <p>
+            Relevant Courses: Data Structures, Algorithms, Web Development,
+            Database Systems.
+          </p>
+        </section>
+
+        <!-- Toggle Skills Button -->
+        <button onclick="toggleSkills()">Toggle Skills</button>
+
+        <!-- Skills Section with ID to identify it in JavaScript -->
+        <section id="skillsSection">
+          <h2>Skills</h2>
+          <ul>
+            <li>Programming Languages: Python, Java, C++</li>
+            <li>Web Development: HTML, CSS, JavaScript</li>
+            <li>Tools: Git, VS Code, Linux</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Experience</h2>
+          <p><strong>Intern at Alinma</strong> (Summer 2023)</p>
+          <ul>
+            <li>
+              Worked on front-end development using HTML, CSS, and JavaScript.
+            </li>
+            <li>Assisted in debugging and testing software applications.</li>
+          </ul>
+        </section>
+
+        <blockquote>
+          <p>
+            "The only way to do great work is to love what you do." - Steve Jobs
+          </p>
+        </blockquote>
+      </article>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Yousef. All rights reserved.</p>
+      <a href="#top">Back to Top</a>
+    </footer>
+
+    <script>
+      function toggleSkills() {
+        const skillsSection = document.getElementById("skillsSection");
+
+        // If the section is currently displayed, hide it; otherwise, show it
+        if (skillsSection.style.display === "none") {
+          skillsSection.style.display = "block";
+        } else {
+          skillsSection.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

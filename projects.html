@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="/ styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My Projects</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Existing Projects -->
+      <article>
+        <h2>Project 1: CV</h2>
+        <p>
+          This is my personal portfolio website built using HTML and CSS. It
+          showcases my skills, projects, and contact information.
+        </p>
+        <time datetime="2024-01-15">January 2025</time>
+        <figure>
+          <img
+            src="/Screenshot 2025-01-31 at 1.38.56 PM.png"
+            alt="Portfolio Website Screenshot"
+            width="300"
+          />
+          <figcaption>Screenshot of the Portfolio Website</figcaption>
+        </figure>
+        <a href="https://github.com/YousefAlsuliman/portfolio" target="_blank"
+          >View on GitHub</a
+        >
+      </article>
+
+      <article>
+        <h2>Project 2: Murabi website</h2>
+        <p>murabi website for managing cattle</p>
+        <time datetime="2023-11-10">November 2023</time>
+        <figure>
+          <img
+            src="/Screenshot 2024-11-26 at 7.20.07 PM.png"
+            alt="To-Do List App Screenshot"
+            width="300"
+          />
+          <figcaption>Screenshot of the murabi</figcaption>
+        </figure>
+        <a
+          href="https://github.com/YousefAlsuliman/murabi-website"
+          target="_blank"
+          >View on GitHub</a
+        >
+      </article>
+
+      <!-- Button to show more projects -->
+      <button id="showMoreBtn" onclick="showMoreProjects()">
+        Show More Projects
+      </button>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Yousef. All rights reserved.</p>
+      <a href="#top">Back to Top</a>
+    </footer>
+
+    <script>
+      function showMoreProjects() {
+        // Select the <main> element where new projects will appear
+        const mainElement = document.querySelector("main");
+
+        // Create a new article
+        const newArticle = document.createElement("article");
+        newArticle.classList.add("dynamic-project"); // Optional class name
+
+        // Add project title
+        const projectTitle = document.createElement("h2");
+        projectTitle.textContent = "Project 3: Weather Forecast App";
+        newArticle.appendChild(projectTitle);
+
+        // Add a short description
+        const projectDesc = document.createElement("p");
+        projectDesc.textContent =
+          "A weather app that fetches real-time data to display current conditions and a 5-day forecast. Built using JavaScript and a public weather API.";
+        newArticle.appendChild(projectDesc);
+
+        // Add time element
+        const projectTime = document.createElement("time");
+        projectTime.setAttribute("datetime", "2025-08-01");
+        projectTime.textContent = "August 2025";
+        newArticle.appendChild(projectTime);
+
+        // Create a figure with an image and caption
+        const figure = document.createElement("figure");
+        const img = document.createElement("img");
+        img.src = "/Screenshot-weather-app.png"; // Replace with your actual screenshot
+        img.alt = "Weather Forecast App Screenshot";
+        img.width = 300;
+        figure.appendChild(img);
+
+        const figcaption = document.createElement("figcaption");
+        figcaption.textContent = "Screenshot of the Weather Forecast App";
+        figure.appendChild(figcaption);
+
+        newArticle.appendChild(figure);
+
+        // Add a link to GitHub
+        const projectLink = document.createElement("a");
+        projectLink.href = "https://github.com/YousefAlsuliman/weather-app";
+        projectLink.target = "_blank";
+        projectLink.textContent = "View on GitHub";
+        newArticle.appendChild(projectLink);
+
+        // Finally, append the new article to the main element
+        mainElement.appendChild(newArticle);
+
+        // Optional: disable or hide the button after clicking
+        document.getElementById("showMoreBtn").disabled = true;
+        // Or: document.getElementById('showMoreBtn').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>
